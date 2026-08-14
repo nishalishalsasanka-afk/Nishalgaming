@@ -509,3 +509,589 @@ setInterval(makeSnow,180);
 
 </body>
   </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NISHAL GAMING</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,#102d52,#03070d 55%,#000);
+    color:white;
+}
+
+.snow{
+    position:fixed;
+    top:-20px;
+    color:white;
+    pointer-events:none;
+    z-index:9999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+#login{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:400px;
+    padding:35px 25px;
+    text-align:center;
+    background:#07101ddd;
+    border:1px solid #008cff;
+    border-radius:22px;
+    box-shadow:0 0 35px #008cff55;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:900;
+    background:linear-gradient(90deg,#ff1744,#fff,#00c8ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    color:#8797a8;
+    margin:10px 0 25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+    border-radius:10px;
+    border:1px solid #29425a;
+    background:#020509;
+    color:white;
+    outline:none;
+}
+
+button{
+    cursor:pointer;
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(90deg,#ff1744,#006eff,#00c8ff);
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+}
+
+#home{
+    display:none;
+    min-height:100vh;
+    padding:15px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 18px;
+    margin-bottom:15px;
+    background:#07111d;
+    border:1px solid #183a59;
+    border-radius:15px;
+}
+
+.nav-logo{
+    font-weight:bold;
+    color:#00c8ff;
+}
+
+.logout{
+    width:auto;
+    padding:9px 15px;
+    margin:0;
+    border:1px solid #34516b;
+    border-radius:8px;
+    background:#0b1622;
+    color:white;
+}
+
+.profile{
+    padding:30px 20px;
+    text-align:center;
+    background:#050b13ee;
+    border:1px solid #183a59;
+    border-radius:22px;
+}
+
+.avatar{
+    width:115px;
+    height:115px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:3px solid #00c8ff;
+    color:#00c8ff;
+    font-size:38px;
+    font-weight:bold;
+    box-shadow:0 0 25px #008cff;
+}
+
+.name{
+    margin-top:17px;
+    font-size:32px;
+    font-weight:900;
+    background:linear-gradient(90deg,#ff1744,#fff,#00c8ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.username{
+    color:#718093;
+    margin-top:5px;
+}
+
+.bio{
+    max-width:650px;
+    margin:15px auto;
+    color:#aab7c5;
+    line-height:1.6;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.stat{
+    padding:20px;
+    background:#091421;
+    border:1px solid #183a59;
+    border-radius:14px;
+}
+
+.stat-number{
+    color:#00c8ff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.stat-text{
+    margin-top:5px;
+    color:#718093;
+}
+
+.title{
+    text-align:left;
+    margin:30px 0 15px;
+    color:#00c8ff;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.service{
+    padding:20px;
+    text-align:left;
+    background:#091421;
+    border:1px solid #183a59;
+    border-radius:14px;
+    transition:.2s;
+}
+
+.service:hover{
+    transform:translateY(-3px);
+    border-color:#00c8ff;
+    box-shadow:0 0 18px #008cff33;
+}
+
+.icon{
+    font-size:28px;
+}
+
+.service h3{
+    margin-top:8px;
+}
+
+.service p{
+    margin-top:6px;
+    color:#718093;
+    line-height:1.5;
+}
+
+.social{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.social button{
+    width:100%;
+    padding:13px;
+    margin:0;
+    border:1px solid #183a59;
+    border-radius:10px;
+    background:#091421;
+    color:white;
+}
+
+.about{
+    margin-top:25px;
+    padding:20px;
+    text-align:left;
+    background:#091421;
+    border:1px solid #183a59;
+    border-radius:14px;
+    color:#8998a8;
+    line-height:1.7;
+}
+
+.footer{
+    margin-top:25px;
+    color:#526171;
+    font-size:13px;
+}
+
+@media(max-width:600px){
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .social{
+        grid-template-columns:1fr;
+    }
+
+    .name{
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="snow"></div>
+
+<!-- LOGIN -->
+
+<section id="login">
+
+    <div class="login-box">
+
+        <div class="logo">
+            NISHAL GAMING
+        </div>
+
+        <div class="subtitle">
+            GAMING • EDITING • DIGITAL
+        </div>
+
+        <input id="username" type="text" placeholder="Username">
+
+        <input id="password" type="password" placeholder="Password">
+
+        <button class="login-btn" onclick="loginUser()">
+            LOGIN
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="container">
+
+    <div class="navbar">
+
+        <div class="nav-logo">
+            NISHAL GAMING
+        </div>
+
+        <button class="logout" onclick="logoutUser()">
+            LOGOUT
+        </button>
+
+    </div>
+
+
+    <div class="profile">
+
+        <div class="avatar">
+            NG
+        </div>
+
+        <div class="name">
+            NISHAL GAMING
+        </div>
+
+        <div class="username">
+            @nishalgaming
+        </div>
+
+        <p class="bio">
+            Welcome to the official NISHAL GAMING website.
+            <br>
+            Gaming • Graphic Design • Video Editing
+        </p>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-number">100+</div>
+                <div class="stat-text">Designs</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-text">Projects</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-text">Support</div>
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <h2 class="title">
+            GAMING SERVICES
+        </h2>
+
+        <div class="services">
+
+            <div class="service">
+                <div class="icon">🎮</div>
+                <h3>Gaming Profile</h3>
+                <p>
+                    Professional gaming profiles,
+                    banners and gaming designs.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">🎨</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Logos, posters, thumbnails
+                    and banners.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">🎬</div>
+                <h3>Video Editing</h3>
+                <p>
+                    Gaming videos, reels and
+                    social media edits.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">💻</div>
+                <h3>Digital Services</h3>
+                <p>
+                    Modern creative digital
+                    services and websites.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <h2 class="title">
+            CONNECT
+        </h2>
+
+        <div class="social">
+
+            <button onclick="socialMessage('WhatsApp')">
+                WhatsApp
+            </button>
+
+            <button onclick="socialMessage('TikTok')">
+                TikTok
+            </button>
+
+            <button onclick="socialMessage('Instagram')">
+                Instagram
+            </button>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="about">
+
+            <strong style="color:#00c8ff;">
+                ABOUT NISHAL GAMING
+            </strong>
+
+            <br><br>
+
+            NISHAL GAMING is a gaming and creative
+            platform focused on gaming content,
+            graphic design, video editing and
+            digital services.
+
+        </div>
+
+
+        <div class="footer">
+            © 2026 NISHAL GAMING
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* LOGIN */
+
+function loginUser(){
+
+    var username =
+        document.getElementById("username").value.trim();
+
+    var password =
+        document.getElementById("password").value;
+
+    if(
+        username === "admin" &&
+        password === "1234"
+    ){
+
+        document.getElementById("login")
+        .style.display = "none";
+
+        document.getElementById("home")
+        .style.display = "block";
+
+    }else{
+
+        alert("Wrong username or password!");
+
+    }
+}
+
+
+/* LOGOUT */
+
+function logoutUser(){
+
+    document.getElementById("home")
+    .style.display = "none";
+
+    document.getElementById("login")
+    .style.display = "flex";
+
+    document.getElementById("username")
+    .value = "";
+
+    document.getElementById("password")
+    .value = "";
+
+}
+
+
+/* SOCIAL */
+
+function socialMessage(name){
+
+    alert(name + " link can be added next.");
+
+}
+
+
+/* SNOW */
+
+function createSnow(){
+
+    var snow =
+        document.createElement("div");
+
+    snow.className = "snow";
+
+    snow.innerHTML = "❄";
+
+    snow.style.left =
+        Math.random()*100 + "vw";
+
+    snow.style.fontSize =
+        (8 + Math.random()*15) + "px";
+
+    snow.style.opacity =
+        0.3 + Math.random()*0.7;
+
+    snow.style.animationDuration =
+        (5 + Math.random()*7) + "s";
+
+    document
+        .getElementById("snow")
+        .appendChild(snow);
+
+    setTimeout(function(){
+        snow.remove();
+    },13000);
+
+}
+
+setInterval(createSnow,180);
+
+</script>
+
+</body>
+            </html>
