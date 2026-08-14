@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NISHAL GAMING</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:#fff;
+    background:#02050a;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+    radial-gradient(circle at 15% 20%,#071d42 0,transparent 35%),
+    radial-gradient(circle at 85% 25%,#300812 0,transparent 32%),
+    linear-gradient(135deg,#02050a,#030914 50%,#000);
+}
+
+/* GAMING CHARACTER */
+
+.gamer{
+    position:fixed;
+    right:-20px;
+    bottom:0;
+    width:360px;
+    height:520px;
+    z-index:-2;
+    opacity:.28;
+    pointer-events:none;
+}
+
+.gamer .head{
+    position:absolute;
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    background:#101a27;
+    border:3px solid #168cff;
+    right:105px;
+    top:50px;
+    box-shadow:0 0 35px #006cff;
+}
+
+.gamer .body{
+    position:absolute;
+    width:230px;
+    height:300px;
+    border-radius:100px 100px 20px 20px;
+    background:linear-gradient(145deg,#111d2d,#03070d);
+    border:3px solid #173f67;
+    right:60px;
+    top:170px;
+}
+
+.gamer .arm1,
+.gamer .arm2{
+    position:absolute;
+    width:70px;
+    height:240px;
+    border-radius:40px;
+    background:#0b1420;
+    border:2px solid #154b7b;
+    top:190px;
+}
+
+.gamer .arm1{
+    right:270px;
+    transform:rotate(18deg);
+}
+
+.gamer .arm2{
+    right:25px;
+    transform:rotate(-18deg);
+}
+
+.gamer .head:after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:35px;
+    left:10px;
+    top:65px;
+    border-radius:20px;
+    background:#020509;
+    border:2px solid #00bfff;
+    box-shadow:0 0 18px #00bfff;
+}
+
+/* PARTICLES */
+
+.particle{
+    position:fixed;
+    color:#00bfff;
+    pointer-events:none;
+    z-index:1;
+    animation:particleMove linear forwards;
+}
+
+@keyframes particleMove{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* LOGIN */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.loginBox{
+    width:100%;
+    max-width:420px;
+    padding:35px 25px;
+    text-align:center;
+
+    background:rgba(3,8,16,.94);
+    border:1px solid #087cff;
+    border-radius:24px;
+
+    box-shadow:
+    0 0 30px #006eff55,
+    inset 0 0 25px #001b38;
+}
+
+.logo{
+    font-size:36px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #fff,
+        #00bfff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    text-shadow:0 0 25px #006eff;
+}
+
+.tagline{
+    margin-top:8px;
+    margin-bottom:25px;
+    color:#8191a3;
+}
+
+.input{
+    width:100%;
+    padding:15px;
+    margin:7px 0;
+
+    color:white;
+    background:#02050a;
+
+    border:1px solid #263e58;
+    border-radius:11px;
+
+    outline:none;
+}
+
+.input:focus{
+    border-color:#00bfff;
+    box-shadow:0 0 12px #007cff55;
+}
+
+.mainBtn{
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+
+    border:0;
+    border-radius:11px;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #006eff,
+        #00c8ff
+    );
+
+    cursor:pointer;
+}
+
+/* MAIN */
+
+#site{
+    display:none;
+}
+
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:15px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:sticky;
+    top:10px;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 18px;
+
+    background:rgba(4,10,18,.88);
+    backdrop-filter:blur(10px);
+
+    border:1px solid #173a5c;
+    border-radius:16px;
+}
+
+.navLogo{
+    font-weight:900;
+    color:#00c8ff;
+    text-shadow:0 0 12px #007cff;
+}
+
+.navLinks{
+    display:flex;
+    gap:8px;
+}
+
+.navLinks button,
+.logout{
+    padding:9px 12px;
+
+    border:1px solid #244663;
+    border-radius:8px;
+
+    color:white;
+    background:#08121e;
+
+    cursor:pointer;
+}
+
+.logout{
+    border-color:#ff1744;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    margin-top:20px;
+    padding:55px 25px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,23,68,.12),
+        rgba(0,119,255,.14)
+    );
+
+    border:1px solid #183c60;
+    border-radius:25px;
+
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#006eff;
+    filter:blur(120px);
+    opacity:.2;
+    right:0;
+    top:0;
+}
+
+.heroTitle{
+    position:relative;
+    font-size:48px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #ffffff,
+        #00c8ff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.heroText{
+    position:relative;
+    margin-top:12px;
+    color:#9baabc;
+    line-height:1.7;
+}
+
+.heroBtn{
+    position:relative;
+    display:inline-block;
+
+    margin-top:22px;
+    padding:13px 25px;
+
+    border:1px solid #00bfff;
+    border-radius:10px;
+
+    color:white;
+    background:#071624;
+
+    cursor:pointer;
+}
+
+/* PROFILE */
+
+.profile{
+    margin-top:20px;
+    padding:30px 20px;
+
+    text-align:center;
+
+    background:rgba(4,10,18,.92);
+
+    border:1px solid #183a59;
+    border-radius:22px;
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#02070d;
+
+    border:3px solid #00bfff;
+
+    color:#00c8ff;
+    font-size:38px;
+    font-weight:900;
+
+    box-shadow:
+    0 0 15px #00aaff,
+    0 0 40px #006eff55;
+}
+
+.profileName{
+    margin-top:17px;
+
+    font-size:32px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #fff,
+        #00c8ff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.username{
+    margin-top:6px;
+    color:#65778a;
+}
+
+.bio{
+    max-width:650px;
+    margin:15px auto;
+
+    color:#a9
