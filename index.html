@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shadow Editz</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #2b0000, #050505 55%);
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 420px;
+
+      background: rgba(15, 15, 15, 0.95);
+      border: 1px solid #333;
+
+      border-radius: 22px;
+      padding: 30px 22px;
+
+      text-align: center;
+
+      box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.25);
+    }
+
+    .logo {
+      font-size: clamp(28px, 8vw, 42px);
+      font-weight: 900;
+
+      color: #ffd700;
+
+      text-shadow:
+        0 0 10px red,
+        0 0 25px red;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      margin-bottom: 25px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+
+      padding: 14px;
+      margin-bottom: 12px;
+
+      border: 1px solid #333;
+      border-radius: 12px;
+
+      background: #080808;
+      color: white;
+
+      outline: none;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: #ff0000;
+      box-shadow: 0 0 10px #ff000044;
+    }
+
+    button {
+      width: 100%;
+
+      padding: 14px;
+      margin-top: 5px;
+
+      border: none;
+      border-radius: 12px;
+
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7300,
+        #ffd700
+      );
+
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #home {
+      display: none;
+    }
+
+    .card {
+      margin-top: 20px;
+      padding: 20px;
+
+      background: #181818;
+      border-radius: 15px;
+
+      border: 1px solid #292929;
+    }
+
+    .services {
+      margin-top: 15px;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .logout {
+      margin-top: 20px;
+      background: #222;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 15px;
+      }
+
+      .box {
+        padding: 25px 18px;
+        border-radius: 18px;
+      }
+
+      .subtitle {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGIN PAGE -->
+
+  <div class="box" id="login">
+
+    <div class="logo">
+      SHADOW EDITZ
+    </div>
+
+    <div class="subtitle">
+      Welcome Back
+    </div>
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Username"
+    >
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+    >
+
+    <button onclick="login()">
+      LOGIN
+    </button>
+
+  </div>
+
+
+  <!-- HOME PAGE -->
+
+  <div class="box" id="home">
+
+    <div class="logo">
+      SHADOW EDITZ
+    </div>
+
+    <div class="subtitle">
+      Official Website
+    </div>
+
+    <div class="card">
+
+      <h2>Welcome 👋</h2>
+
+      <div class="services">
+        🎨 Graphic Design<br>
+        🎬 Video Editing<br>
+        💻 Digital Services
+      </div>
+
+    </div>
+
+    <button class="logout" onclick="logout()">
+      LOGOUT
+    </button>
+
+  </div>
+
+
+  <script>
+
+    function login() {
+
+      const username =
+        document.getElementById("username").value;
+
+      const password =
+        document.getElementById("password").value;
+
+      if (
+        username === "admin" &&
+        password === "1234"
+      ) {
+
+        document.getElementById("login").style.display =
+          "none";
+
+        document.getElementById("home").style.display =
+          "block";
+
+      } else {
+
+        alert("Wrong username or password!");
+
+      }
+    }
+
+
+    function logout() {
+
+      document.getElementById("home").style.display =
+        "none";
+
+      document.getElementById("login").style.display =
+        "block";
+    }
+
+  </script>
+
+</body>
+  </html>
