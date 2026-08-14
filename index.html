@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NISHAL GAMING</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  color:white;
+  background:
+  radial-gradient(circle at top,#071b35,#03070d 50%,#000);
+  overflow-x:hidden;
+}
+
+/* SNOW */
+
+.snow{
+  position:fixed;
+  top:-30px;
+  color:white;
+  z-index:9999;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}
+
+/* LOGIN */
+
+#loginPage{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.loginBox{
+  width:100%;
+  max-width:420px;
+  padding:35px 25px;
+  text-align:center;
+  background:#070d16ee;
+  border:1px solid #008cff;
+  border-radius:25px;
+  box-shadow:0 0 40px #008cff55;
+}
+
+.logo{
+  font-size:36px;
+  font-weight:900;
+  color:#00b7ff;
+  text-shadow:
+  0 0 10px #008cff,
+  0 0 25px #008cff;
+}
+
+.subtitle{
+  color:#8998aa;
+  margin:10px 0 25px;
+}
+
+.input{
+  width:100%;
+  padding:15px;
+  margin:7px 0;
+  border:1px solid #26384c;
+  border-radius:12px;
+  background:#020509;
+  color:white;
+  outline:none;
+  font-size:16px;
+}
+
+.input:focus{
+  border-color:#00b7ff;
+  box-shadow:0 0 12px #008cff55;
+}
+
+.btn{
+  width:100%;
+  padding:15px;
+  margin-top:15px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(90deg,#0066ff,#00c8ff);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+}
+
+/* MAIN */
+
+#mainPage{
+  display:none;
+  min-height:100vh;
+  padding:20px 15px;
+}
+
+.container{
+  width:100%;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* NAV */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  margin-bottom:20px;
+  background:#07101cdd;
+  border:1px solid #173451;
+  border-radius:18px;
+}
+
+.navLogo{
+  color:#00c8ff;
+  font-weight:900;
+  text-shadow:0 0 10px #008cff;
+}
+
+.logout{
+  padding:9px 15px;
+  border:1px solid #28435f;
+  border-radius:10px;
+  background:#0b1624;
+  color:white;
+}
+
+/* PROFILE */
+
+.profile{
+  padding:35px 20px;
+  text-align:center;
+  background:#050b14ee;
+  border:1px solid #173451;
+  border-radius:25px;
+  box-shadow:0 0 40px #008cff22;
+}
+
+.avatar{
+  width:125px;
+  height:125px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  background:#02060b;
+  border:3px solid #00b7ff;
+  color:#00c8ff;
+  font-size:42px;
+  font-weight:900;
+  box-shadow:0 0 25px #008cff;
+}
+
+.name{
+  margin-top:
