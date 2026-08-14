@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NISHAL GAMING</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,#061f3d,#020509 55%,#000);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* SNOW */
+
+.snow{
+    position:fixed;
+    top:-20px;
+    color:white;
+    pointer-events:none;
+    z-index:9999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* LOGIN */
+
+#login{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.box{
+    width:100%;
+    max-width:400px;
+    padding:30px 22px;
+    text-align:center;
+
+    background:#07101ddd;
+
+    border:1px solid #008cff;
+    border-radius:22px;
+
+    box-shadow:0 0 35px #008cff55;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #ffffff,
+        #00bfff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    color:#8998aa;
+    margin:10px 0 25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+
+    background:#020509;
+    color:white;
+
+    border:1px solid #29425a;
+    border-radius:10px;
+
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+
+    border:0;
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #006eff,
+        #00c8ff
+    );
+
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* HOME */
+
+#home{
+    display:none;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+.profile{
+    padding:30px 20px;
+    text-align:center;
+
+    background:#050b13ee;
+
+    border:1px solid #173a59;
+    border-radius:22px;
+
+    box-shadow:0 0 35px #008cff33;
+}
+
+.avatar{
+    width:110px;
+    height:110px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    border:3px solid #00bfff;
+
+    color:#00c8ff;
+
+    font-size:35px;
+    font-weight:900;
+
+    box-shadow:
+    0 0 15px #008cff,
+    0 0 35px #ff174455;
+}
+
+.name{
+    margin-top:18px;
+
+    font-size:32px;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #ffffff,
+        #00bfff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.username{
+    margin-top:6px;
+    color:#69798b;
+}
+
+.bio{
+    margin:15px auto;
+    max-width:600px;
+
+    color:#aab7c5;
+    line-height:1.6;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.card{
+    padding:20px;
+
+    background:#091421;
+
+    border:1px solid #18334f;
+    border-radius:14px;
+}
+
+.card h2{
+    color:#00c8ff;
+}
+
+.card p{
+    margin-top:7px;
+    color:#718093;
+}
+
+/* SERVICES */
+
+.title{
+    text-align:left;
+    color:#00c8ff;
+
+    margin:30px 0 15px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.service{
+    padding:20px;
+
+    background:#091421;
+
+    border:1px solid #18334f;
+    border-radius:14px;
+
+    text-align:left;
+}
+
+.service-icon{
+    font-size:28px;
+}
+
+.service h3{
+    margin-top:8px;
+}
+
+.service p{
+    margin-top:6px;
+    color:#718093;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:28px;
+    }
+
+    .name{
+        font-size:27px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- SNOW -->
+
+<div id="snow"></div>
+
+
+<!-- LOGIN -->
+
+<section id="login">
+
+    <div class="box">
+
+        <div class="logo">
+            NISHAL GAMING
+        </div>
+
+        <div class="subtitle">
+            GAMING • EDITING • DIGITAL
+        </div>
+
+        <input
+            id="username"
+            type="text"
+            placeholder="Username"
+        >
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button onclick="loginUser()">
+            LOGIN
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="container">
+
+    <div class="profile">
+
+        <div class="avatar">
+            NG
+        </div>
+
+        <div class="name">
+            NISHAL GAMING
+        </div>
+
+        <div class="username">
+            @nishalgaming
+        </div>
+
+        <p class="bio">
+            Welcome to the official NISHAL GAMING website.
+            <br>
+            Gaming • Graphic Design • Video Editing
+        </p>
+
+
+        <!-- STATS -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>100+</h2>
+                <p>Designs</p>
+            </div>
+
+            <div class="card">
+                <h2>50+</h2>
+                <p>Projects</p>
+            </div>
+
+            <div class="card">
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <h2 class="title">
+            GAMING SERVICES
+        </h2>
+
+        <div class="services">
+
+            <div class="service">
+                <div class="service-icon">🎮</div>
+                <h3>Gaming Profile</h3>
+                <p>
+                    Gaming profiles, banners and designs.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">🎨</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Logos, posters, thumbnails and banners.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">🎬</div>
+                <h3>Video Editing</h3>
+                <p>
+                    Gaming videos and social media edits.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">💻</div>
+                <h3>Digital Services</h3>
+                <p>
+                    Modern digital creative services.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* LOGIN */
+
+function loginUser(){
+
+    const username =
+        document.getElementById("username").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    if(
+        username === "admin" &&
+        password === "1234"
+    ){
+
+        document.getElementById("login")
+        .style.display = "none";
+
+        document.getElementById("home")
+        .style.display = "block";
+
+    }else{
+
+        alert("Wrong username or password!");
+
+    }
+
+}
+
+
+/* SNOW */
+
+function makeSnow(){
+
+    const snow =
+        document.createElement("div");
+
+    snow.className = "snow";
+
+    snow.innerHTML = "❄";
+
+    snow.style.left =
+        Math.random()*100 + "vw";
+
+    snow.style.fontSize =
+        (8 + Math.random()*15) + "px";
+
+    snow.style.opacity =
+        0.3 + Math.random()*0.7;
+
+    snow.style.animationDuration =
+        (5 + Math.random()*7) + "s";
+
+    document
+        .getElementById("snow")
+        .appendChild(snow);
+
+    setTimeout(
+        () => snow.remove(),
+        13000
+    );
+
+}
+
+setInterval(makeSnow,180);
+
+</script>
+
+
+</body>
+  </html>
