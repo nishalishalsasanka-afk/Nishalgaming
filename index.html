@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Editz</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #050505;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 420px;
+      background: #111;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #ff000055;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border: 1px solid #333;
+      border-radius: 10px;
+      background: #080808;
+      color: white;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #ff0000, #ffd700);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #home {
+      display: none;
+    }
+
+    .card {
+      margin-top: 20px;
+      padding: 20px;
+      background: #181818;
+      border-radius: 15px;
+    }
+
+    .logout {
+      background: #222;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div class="container" id="login">
+    <h1>SHADOW EDITZ</h1>
+    <p class="subtitle">Welcome Back</p>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">LOGIN</button>
+  </div>
+
+
+  <!-- HOME -->
+  <div class="container" id="home">
+    <h1>SHADOW EDITZ</h1>
+    <p class="subtitle">Official Website</p>
+
+    <div class="card">
+      <h2>Welcome 👋</h2>
+      <p style="margin-top:10px;">
+        Graphic Design • Editing • Digital Services
+      </p>
+    </div>
+
+    <button class="logout" onclick="logout()">LOGOUT</button>
+  </div>
+
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "1234") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("home").style.display = "block";
+      } else {
+        alert("Wrong username or password!");
+      }
+    }
+
+    function logout() {
+     
