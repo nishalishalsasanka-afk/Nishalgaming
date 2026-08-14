@@ -1,2 +1,2 @@
-# ngaming
+# Ngaming
 Gaming
