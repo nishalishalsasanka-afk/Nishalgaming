@@ -1,2 +1,2 @@
-# Nishalgaming
+# ngaming
 Gaming
