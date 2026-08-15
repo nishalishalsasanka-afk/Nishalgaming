@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NISHAL GAMING</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    background:#030305;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    left:-180px;
+    top:-180px;
+    border-radius:50%;
+    background:#6500ff;
+    filter:blur(140px);
+    opacity:.22;
+    z-index:-2;
+    animation:purpleGlow 7s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    right:-180px;
+    bottom:-180px;
+    border-radius:50%;
+    background:#ff003c;
+    filter:blur(140px);
+    opacity:.18;
+    z-index:-2;
+    animation:redGlow 8s infinite alternate;
+}
+
+@keyframes purpleGlow{
+    to{
+        transform:translate(160px,120px);
+    }
+}
+
+@keyframes redGlow{
+    to{
+        transform:translate(-150px,-120px);
+    }
+}
+
+/* ================= SNOW ================= */
+
+.snow{
+    position:fixed;
+    top:-30px;
+    color:white;
+    pointer-events:none;
+    z-index:50;
+    animation:snowFall linear infinite;
+}
+
+@keyframes snowFall{
+
+    from{
+        transform:translateY(-30px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:.15;
+    }
+}
+
+/* ================= AUTH ================= */
+
+#auth{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.authBox{
+    width:100%;
+    max-width:420px;
+    padding:30px 24px;
+    background:rgba(10,10,17,.94);
+    border:1px solid #ffffff18;
+    border-radius:24px;
+    box-shadow:0 0 50px #6500ff35;
+    backdrop-filter:blur(15px);
+}
+
+.logo{
+    text-align:center;
+    font-size:36px;
+    font-weight:900;
+    letter-spacing:3px;
+    text-shadow:
+        0 0 10px red,
+        0 0 25px #7200ff,
+        0 0 45px red;
+}
+
+.subtitle{
+    text-align:center;
+    margin:8px 0 25px;
+    color:#888;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.tab{
+    flex:1;
+    padding:13px;
+    border:0;
+    border-radius:10px;
+    background:#18181f;
+    color:#999;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:linear-gradient(135deg,#7200ff,#ff1744);
+    color:white;
+}
+
+.form{
+    display:none;
+}
+
+.form.active{
+    display:block;
+}
+
+.form h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:13px;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#07070a;
+    color:white;
+    outline:none;
+}
+
+input:focus{
+    border-color:#7200ff;
+}
+
+.mainBtn{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(135deg,#7200ff,#ff1744);
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.message{
+    text-align:center;
+    color:#aaa;
+    margin-top:13px;
+    font-size:13px;
+}
+
+/* ================= DASHBOARD ================= */
+
+#dashboard{
+    display:none;
+    min-height:100vh;
+}
+
+.navbar{
+    padding:17px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(5,5,9,.88);
+    border-bottom:1px solid #ffffff12;
+    backdrop-filter:blur(15px);
+}
+
+.navLogo{
+    font-weight:900;
+    font-size:21px;
+    text-shadow:0 0 15px red;
+}
