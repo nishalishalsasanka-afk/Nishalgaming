@@ -933,6 +933,236 @@ function openWhatsApp(){
 }
 
 </script>
+<!-- NISHAL AI ASSISTANT -->
 
+<style>
+.aiButton{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border:0;
+    border-radius:50%;
+    background:linear-gradient(135deg,#7200ff,#ff1744);
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 0 25px #7200ff80;
+}
+
+.aiBox{
+    display:none;
+    position:fixed;
+    right:20px;
+    bottom:90px;
+    width:320px;
+    max-width:calc(100vw - 40px);
+    background:#0b0b12;
+    border:1px solid #ffffff20;
+    border-radius:20px;
+    overflow:hidden;
+    z-index:10000;
+    box-shadow:0 0 40px #7200ff55;
+}
+
+.aiHeader{
+    padding:15px;
+    background:linear-gradient(135deg,#7200ff,#ff1744);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+}
+
+.aiClose{
+    border:0;
+    background:none;
+    color:white;
+    font-size:22px;
+}
+
+.aiMessages{
+    height:250px;
+    overflow-y:auto;
+    padding:12px;
+}
+
+.aiMessage{
+    padding:10px;
+    margin-bottom:9px;
+    border-radius:12px;
+    font-size:13px;
+}
+
+.aiBot{
+    background:#18181f;
+}
+
+.aiUser{
+    background:#6500ff;
+    text-align:right;
+}
+
+.aiInput{
+    display:flex;
+    gap:6px;
+    padding:10px;
+    border-top:1px solid #ffffff15;
+}
+
+.aiInput input{
+    flex:1;
+    margin:0;
+    padding:10px;
+}
+
+.aiSend{
+    width:45px;
+    border:0;
+    border-radius:9px;
+    background:#7200ff;
+    color:white;
+}
+</style>
+
+<button class="aiButton" onclick="toggleAI()">🤖</button>
+
+<div id="aiBox" class="aiBox">
+
+    <div class="aiHeader">
+        <span>🤖 NISHAL AI</span>
+
+        <button
+            class="aiClose"
+            onclick="toggleAI()">
+            ×
+        </button>
+    </div>
+
+    <div id="aiMessages" class="aiMessages">
+
+        <div class="aiMessage aiBot">
+            👋 Hi Gamer!<br>
+            Welcome to NISHAL GAMING.<br>
+            How can I help you?
+        </div>
+
+    </div>
+
+    <div class="aiInput">
+
+        <input
+            id="aiInput"
+            type="text"
+            placeholder="Ask NISHAL AI..."
+            onkeydown="if(event.key==='Enter')sendAI()">
+
+        <button
+            class="aiSend"
+            onclick="sendAI()">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function toggleAI(){
+
+    const box =
+        document.getElementById("aiBox");
+
+    box.style.display =
+        box.style.display === "block"
+        ? "none"
+        : "block";
+}
+
+
+function sendAI(){
+
+    const input =
+        document.getElementById("aiInput");
+
+    const messages =
+        document.getElementById("aiMessages");
+
+    const text =
+        input.value.trim();
+
+    if(!text) return;
+
+    messages.innerHTML +=
+        `<div class="aiMessage aiUser">
+            ${text}
+        </div>`;
+
+    let reply =
+        "🚀 Thanks for your message!";
+
+
+    const q =
+        text.toLowerCase();
+
+
+    if(q.includes("hello") || q.includes("hi")){
+
+        reply =
+        "👋 Hello Gamer! Welcome to NISHAL GAMING! 🎮";
+
+    }else if(
+        q.includes("topup") ||
+        q.includes("top up")
+    ){
+
+        reply =
+        "💎 TOPUP STORE is currently COMING SOON!";
+
+    }else if(q.includes("poki")){
+
+        reply =
+        "🎮 You can find POKI in the Gaming section.";
+
+    }else if(
+        q.includes("crazy") ||
+        q.includes("games")
+    ){
+
+        reply =
+        "🔥 CRAZYGAMES is available in the Gaming section.";
+
+    }else if(q.includes("contact")){
+
+        reply =
+        "💬 You can contact NISHAL GAMING through WhatsApp.";
+
+    }else{
+
+        reply =
+        "🤖 I'm NISHAL AI. Try asking about Top-Up, Games, POKI or Contact.";
+
+    }
+
+
+    setTimeout(function(){
+
+        messages.innerHTML +=
+            `<div class="aiMessage aiBot">
+                ${reply}
+            </div>`;
+
+        messages.scrollTop =
+            messages.scrollHeight;
+
+    },500);
+
+    input.value="";
+}
+
+</script>
 </body>
   </html>
